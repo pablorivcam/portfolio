@@ -11,7 +11,7 @@ export function Slider({ initialValue, sliderId, onChange, width, sliderRotation
                     setValue(position);
                     onChange(position);
                 }}
-                className="slider" id="myRange"
+                className="slider"
             />
         </div>
     );

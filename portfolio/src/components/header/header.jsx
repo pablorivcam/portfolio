@@ -3,6 +3,7 @@ import * as Tone from 'tone';
 import testAudio from '../../resources/testAudio.mp3';
 import { Slider } from "../slider/slider";
 import './header.css';
+import HeaderCanvas from "./canvas/headerCanvas";
 
 var ready = false;
 var isMusicPlaying = false;
@@ -112,20 +113,30 @@ function changeReverb(value) {
 }
 
 export function Header() {
-    return <div id="synth_container">
-        <input type="button" value="start" onClick={startMusic} />
-        <audio src={testAudio}></audio>
-        <div id="slider_box">
-            <Slider initialValue={0} sliderId="volumeSlider"
-                sliderRotation="-45deg" width="50%" onChange={changeDelay} />
-            <Slider initialValue={0} sliderId="volumeSlider"
-                sliderRotation="45deg" width="50%" onChange={changeLowpass} />
-            <Slider initialValue={0} sliderId="volumeSlider"
-                sliderRotation="-45deg" width="50%" onChange={changeReverb} />
-            <Slider initialValue={0} sliderId="volumeSlider"
-                sliderRotation="45deg" width="50%" onChange={changeVibrato} />
-        </div>
-        <Slider initialValue={50} sliderId="volumeSlider"
-            sliderRotation="0deg" width="100%" onChange={changePitchShift} />
-    </div >
+    return <div id="header">
+        <div id="header_container">
+            <input id="header_sound_button" type="button" value="start" onClick={startMusic} />
+            <HeaderCanvas />
+            <audio src={testAudio}></audio>
+            <div id="synth_controls">
+                <div class="slider_row">
+                    <Slider initialValue={0} sliderId="volumeSlider"
+                        sliderRotation="-45deg" width="20vmin" onChange={changeDelay} />
+                    <Slider initialValue={0} sliderId="volumeSlider"
+                        sliderRotation="45deg" width="20vmin" onChange={changeLowpass} />
+                    <Slider initialValue={0} sliderId="volumeSlider"
+                        sliderRotation="-45deg" width="20vmin" onChange={changeReverb} />
+                    <Slider initialValue={0} sliderId="volumeSlider"
+                        sliderRotation="45deg" width="20vmin" onChange={changeVibrato} />
+                </div>
+                <div class="slider_row">
+                    <Slider initialValue={50} sliderId="volumeSlider"
+                        sliderRotation="0deg" width="80vw" onChange={changePitchShift} />
+                </div>
+            </div>
+            <div id="header_title">
+                Soy Pablo Rivas y este es mi portfolio
+            </div>
+        </div >
+    </div>
 }

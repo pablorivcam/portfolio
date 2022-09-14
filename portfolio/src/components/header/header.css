@@ -1,3 +1,50 @@
-#slider_box {
+.slider_row {
     display: flex;
+    height: 100%;
+    justify-content: center;
+}
+
+#header {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+#header_container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+#header_title {
+    width: 100%;
+    text-align: center;
+}
+
+#header_sound_button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 1em;
+}
+
+#header_container canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+}
+
+#synth_controls,
+#header_title {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#header_title {
+    color: white;
 }
