@@ -1,4 +1,10 @@
 body {
   margin: 0;
   font-size: 1vw;
+  font-family: Verdana, sans-serif;
+
+}
+
+.text_primary {
+  color: #00CC99;
 }

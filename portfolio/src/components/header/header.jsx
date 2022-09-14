@@ -118,24 +118,28 @@ export function Header() {
             <input id="header_sound_button" type="button" value="start" onClick={startMusic} />
             <HeaderCanvas />
             <audio src={testAudio}></audio>
-            <div id="synth_controls">
-                <div class="slider_row">
-                    <Slider initialValue={0} sliderId="volumeSlider"
-                        sliderRotation="-45deg" width="20vmin" onChange={changeDelay} />
-                    <Slider initialValue={0} sliderId="volumeSlider"
-                        sliderRotation="45deg" width="20vmin" onChange={changeLowpass} />
-                    <Slider initialValue={0} sliderId="volumeSlider"
-                        sliderRotation="-45deg" width="20vmin" onChange={changeReverb} />
-                    <Slider initialValue={0} sliderId="volumeSlider"
-                        sliderRotation="45deg" width="20vmin" onChange={changeVibrato} />
+            <div id="center_container">
+                <div id="synth_controls">
+                    <div className="slider_row">
+                        <Slider initialValue={0} sliderId="volumeSlider"
+                            sliderRotation="-45deg" width="20vmin" onChange={changeDelay} />
+                        <Slider initialValue={0} sliderId="volumeSlider"
+                            sliderRotation="45deg" width="20vmin" onChange={changeLowpass} />
+                        <Slider initialValue={0} sliderId="volumeSlider"
+                            sliderRotation="-45deg" width="20vmin" onChange={changeReverb} />
+                        <Slider initialValue={0} sliderId="volumeSlider"
+                            sliderRotation="45deg" width="20vmin" onChange={changeVibrato} />
+                    </div>
+                    <div className="slider_row">
+                        <Slider initialValue={50} sliderId="volumeSlider"
+                            sliderRotation="0deg" width="80vw" onChange={changePitchShift} />
+                    </div>
                 </div>
-                <div class="slider_row">
-                    <Slider initialValue={50} sliderId="volumeSlider"
-                        sliderRotation="0deg" width="80vw" onChange={changePitchShift} />
+                <div id="header_title">
+                    <div>Soy <span className="text_primary">Pablo Rivas</span></div>
+                    <div>bienvenido a mi portfolio</div>
+                    <input type="button" value="entrar" />
                 </div>
-            </div>
-            <div id="header_title">
-                Soy Pablo Rivas y este es mi portfolio
             </div>
         </div >
     </div>

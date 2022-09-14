@@ -19,6 +19,7 @@
 #header_title {
     width: 100%;
     text-align: center;
+    font-size: 3.5vmin;
 }
 
 #header_sound_button {
@@ -39,6 +40,10 @@
 
 #synth_controls,
 #header_title {
+    width: 100%;
+}
+
+#center_container {
     position: absolute;
     width: 100%;
     top: 50%;
