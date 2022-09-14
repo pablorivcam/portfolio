@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <div style="width:100%; height:100%">
+        <canvas id="myCanvas" width="1200" height="600" style="width:100%; height:100%"></canvas>
+    </div>
+    <script>
+        CANVAS_WIDTH = 1200;
+        CANVAS_HEIGHT = 600;
+
+        class Particle {
+
+            initialX = 0;
+            initialY = 0;
+
+            posX = 500;
+            posY = 500;
+            width = 50;
+            height = 50;
+            aX = 1;
+            aY = 2;
+            color = '#99000099'
+            maxSpeed = 20;
+
+            constructor(initialX, initialY, size, color, maxSpeed) {
+                this.color = color;
+
+                this.initialX = initialX;
+                this.initialY = initialY;
+
+                this.posX = initialX;
+                this.posY = initialY;
+                this.width = size;
+                this.height = size;
+
+                this.maxSpeed = maxSpeed;
+
+                this.changeSpeed();
+
+            }
+
+            changeSpeed() {
+                this.aX = Math.round((Math.random() * this.maxSpeed)) - this.maxSpeed / 2;
+                this.aY = Math.round((Math.random() * this.maxSpeed)) - this.maxSpeed / 2;
+            }
+
+            update() {
+                this.posX += this.aX;
+                this.posY += this.aY;
+
+                if (this.posX > CANVAS_WIDTH || this.posX < 0 || this.posY > CANVAS_HEIGHT || this.posY < 0 || this.aX === 0 || this.ay === 0) {
+                    this.posX = this.initialX;
+                    this.posY = this.initialY;
+                    this.changeSpeed();
+                }
+
+            }
+
+            draw(ctx) {
+                ctx.fillStyle = this.color;
+                ctx.fillRect(this.posX, this.posY, this.width, this.height);
+            }
+
+        }
+
+        // 77676547687687678967896798
+
+        const particles = [];
+        for (let i = 0; i < 100; i++) {
+            const size = Math.round((Math.random() * 15)) + 5;
+
+            const colorValue = Math.round((Math.random() * 180)) + 70;
+            const colorTransparency = Math.round((Math.random() * 160)) + 90;
+
+            const color = '#00' + colorValue.toString(16) + colorValue.toString(16) + colorTransparency.toString(16);
+
+            particles.push(new Particle(500, 200, size, color, 20));
+        }
+
+        // 77676547687687678967896798
+
+        var stop = false;
+        var frameCount = 0;
+        var fps, fpsInterval, startTime, now, then, elapsed;
+
+        // initialize the timer variables and start the animation
+
+        function draw() {
+            var c = document.getElementById("myCanvas");
+            var ctx = c.getContext("2d");
+
+            ctx.fillStyle = '#000000';
+            ctx.fillRect(0, 0, 1200, 600);
+
+            ctx.fill();
+
+            particles.forEach(p => { p.update(); p.draw(ctx); });
+
+        }
+
+        function start(fps) {
+            fpsInterval = 1000 / fps;
+            then = Date.now();
+            startTime = then;
+            animation();
+        }
+
+        function animation() {
+
+            window.requestAnimationFrame(animation);
+
+            now = Date.now();
+            elapsed = now - then;
+
+            if (elapsed > fpsInterval) {
+                then = now - (elapsed % fpsInterval);
+                draw();
+            }
+
+        }
+
+        start(60);
+
+    </script>
+</body>
+
+</html>
