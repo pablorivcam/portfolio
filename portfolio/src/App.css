@@ -8,3 +8,107 @@ body {
 .text_primary {
   color: #00CC99;
 }
+
+@-webkit-keyframes rotate
+
+/* Safari and Chrome */
+  {
+  from {
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+}
+
+@keyframes rotate {
+  from {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  to {
+    -ms-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+}
+
+@-webkit-keyframes rotate2
+
+/* Safari and Chrome */
+  {
+  from {
+    -webkit-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+  to {
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes rotate2 {
+  from {
+    -ms-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+  to {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
+
+.my_button {
+  background: 0 0;
+  padding: 1vh 1.2vw;
+  border: 0.1em solid #fff;
+  box-sizing: inherit;
+  display: inline-block;
+  font-size: 2vmin;
+  -webkit-transition: .5s;
+  transition: all .5s;
+  cursor: pointer;
+  display: inline-flex;
+}
+
+.my_button:hover {
+  background: #1b9aaa;
+  border-color: #1b9aaa;
+}
+
+.my_button .fa-icon {
+  font-size: 2vmin;
+  animation: rotate2 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.my_button:hover .fa-icon {
+  -webkit-transition: 0.5s forwards;
+  -moz-transition: 0.5s forwards;
+  -o-transition: 0.5s forwards;
+  transition: 0.5s forwards;
+  /* Use the animation name with additional properties */
+  animation: rotate 0.5s;
+  animation-fill-mode: forwards;
+}

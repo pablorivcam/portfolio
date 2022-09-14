@@ -4,6 +4,8 @@ import testAudio from '../../resources/testAudio.mp3';
 import { Slider } from "../slider/slider";
 import './header.css';
 import HeaderCanvas from "./canvas/headerCanvas";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 var ready = false;
 var isMusicPlaying = false;
@@ -138,9 +140,14 @@ export function Header() {
                 <div id="header_title">
                     <div>Soy <span className="text_primary">Pablo Rivas</span></div>
                     <div>bienvenido a mi portfolio</div>
-                    <input type="button" value="entrar" />
+                    <div className="my_button" style={{ "marginTop": "0.5em" }}>
+                        <span>Entrar</span>
+                        <div className="fa-icon" style={{ "marginLeft": "0.25em" }}>
+                            <FontAwesomeIcon className="fa-icon" icon={faArrowRight}></FontAwesomeIcon>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div >
-    </div>
+    </div >
 }

@@ -60,8 +60,8 @@ export class Particle extends CanvasObject {
         this.positionX += this.aX;
         this.positionY += this.aY;
 
-        if (this.positionX > canvas.width || this.positionX < 0 ||
-            this.positionY > canvas.height || this.positionY < 0 ||
+        if (this.positionX > canvas.width || this.positionX < -this.width ||
+            this.positionY > canvas.height || this.positionY < -this.height ||
             this.aX === 0 || this.ay === 0) {
             this.positionX = this.initialX;
             this.positionY = this.initialY;
