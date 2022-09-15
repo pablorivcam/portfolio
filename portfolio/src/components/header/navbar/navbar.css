@@ -1,0 +1,10 @@
+#navbar {
+    width: 100%;
+    z-index: 1;
+    position: relative;
+}
+
+#navbar_language_container {
+    position: absolute;
+    right: 0;
+}

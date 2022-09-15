@@ -6,6 +6,7 @@ import './header.css';
 import HeaderCanvas from "./canvas/headerCanvas";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { FormattedMessage } from "react-intl";
 
 // Variables necesarias para el reproductor
 var ready = false;
@@ -164,10 +165,10 @@ export function Header() {
                     </div>
                 </div>
                 <div id="header_title">
-                    <div>Soy <span className="text_primary">Pablo Rivas</span></div>
-                    <div>bienvenido a mi portfolio</div>
+                    <div><FormattedMessage id="welcomeMsg01" /> <span className="text_primary">Pablo Rivas</span></div>
+                    <div><FormattedMessage id="welcomeMsg02" /></div>
                     <div className="my_button" style={{ "marginTop": "0.5em" }}>
-                        <span>Entrar</span>
+                        <span><FormattedMessage id="enter" /></span>
                         <div className="fa-icon" style={{ "marginLeft": "0.25em" }}>
                             <FontAwesomeIcon className="fa-icon" icon={faArrowRight}></FontAwesomeIcon>
                         </div>

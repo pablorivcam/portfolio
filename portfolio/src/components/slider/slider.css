@@ -6,7 +6,7 @@
     width: 80%;
     margin-top: 6vmin;
     -webkit-appearance: none;
-    height: 0.5vmin;
+    height: 0.2vmin;
     border-radius: 1vmin;
     background: #77777799;
     outline: none;
@@ -22,17 +22,17 @@
 .slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 2vmin;
-    height: 2vmin;
+    width: 1.8vmin;
+    height: 1.8vmin;
     border-radius: 50%;
-    background: #19bef0;
+    background: #19a1f0;
     cursor: pointer;
 }
 
 .slider::-moz-range-thumb {
-    width: 2vmin;
-    height: 2vmin;
+    width: 1.8vmin;
+    height: 1.8vmin;
     border-radius: 50%;
-    background: #19bef0;
+    background: #19a1f0;
     cursor: pointer;
 }
