@@ -5,6 +5,14 @@ body {
 
 }
 
+.section_title {
+  font-size: 6vmin;
+}
+
+section {
+  padding: 1vh 5vw;
+}
+
 .text_primary {
   color: #00CC99;
 }

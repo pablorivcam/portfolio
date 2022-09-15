@@ -5,6 +5,8 @@ import { IntlProvider } from "react-intl";
 import { SPANISH } from "./i18n/locales";
 import { messages } from "./i18n/messages";
 import { Navbar } from "./components/header/navbar/navbar";
+import { Footer } from "./components/footer/footer";
+import { About } from "./components/about/about";
 
 export function App() {
 
@@ -25,8 +27,14 @@ export function App() {
             messages={messages[currentLocale]}
             locale={currentLocale}
             defaultLocale={SPANISH}>
-            <Navbar currentLocale={currentLocale} handleChange={changeLanguage} />
-            <Header />
+            <div>
+                <Navbar currentLocale={currentLocale} handleChange={changeLanguage} />
+                <Header />
+            </div>
+            <div style={{ marginTop: '100vh', position: 'absolute' }}>
+                <About />
+                <Footer />
+            </div>
         </IntlProvider>
     </Fragment>;
 }

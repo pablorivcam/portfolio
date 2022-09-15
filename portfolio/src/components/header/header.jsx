@@ -1,7 +1,7 @@
 import React from "react";
 import * as Tone from 'tone';
 import testAudio from '../../resources/testAudio.mp3';
-import { Slider } from "../slider/slider";
+import { Slider } from "../elements/slider/slider";
 import './header.css';
 import HeaderCanvas from "./canvas/headerCanvas";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -118,7 +118,7 @@ function changeLowpass(value) {
 }
 
 function changePitchShift(value) {
-    pitchShiftFilter.pitch = (value - 50) / 6
+    pitchShiftFilter.pitch = (value - 50) / 24
     const temperatureInput = document.getElementById("canvasTemperature");
     temperatureInput.value = value;
 }
@@ -139,8 +139,7 @@ function changeReverb(value) {
 
 export function Header() {
 
-
-    return <div id="header">
+    return <header id="header">
         <div id="header_container">
 
             <div id="canvasProperties">
@@ -187,5 +186,5 @@ export function Header() {
                 </div>
             </div>
         </div >
-    </div >
+    </header >
 }

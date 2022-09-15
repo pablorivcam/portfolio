@@ -1,0 +1,35 @@
+#about_container {
+    display: flex;
+    width: 100%;
+}
+
+#about_description {
+    width: 60vw;
+}
+
+#about_section_highlight_description {
+    font-size: 1.8vw;
+    width: 55vw;
+}
+
+#about_section_description,
+#about_section_description2,
+#greeting_msg {
+    width: 40vw;
+    font-size: 1.3vw;
+}
+
+#about_section_description2,
+#greeting_msg {
+    margin-top: 1em;
+}
+
+#about_img {
+    text-align: center;
+    width: 40%;
+}
+
+#about_img img {
+    width: 27vw;
+    height: 54vh;
+}
