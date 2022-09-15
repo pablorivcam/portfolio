@@ -79,16 +79,23 @@ body {
   }
 }
 
-.my_button {
+.my_button,
+.my_button2 {
   background: 0 0;
+  font-size: 2vmin;
+  cursor: pointer;
+  display: inline-block;
   padding: 1vh 1.2vw;
+
+}
+
+.my_button2 {}
+
+.my_button {
   border: 0.1em solid #fff;
   box-sizing: inherit;
-  display: inline-block;
-  font-size: 2vmin;
   -webkit-transition: .5s;
   transition: all .5s;
-  cursor: pointer;
   display: inline-flex;
 }
 

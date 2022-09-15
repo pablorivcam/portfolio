@@ -25,8 +25,11 @@
 #header_sound_button {
     position: absolute;
     top: 0;
-    left: 0;
-    margin: 1em;
+    left: 47.7vw;
+    /*  transform: translateX(-100%);*/
+    margin-top: 1vh;
+    color: white;
+    z-index: 20;
 }
 
 #header_container canvas {

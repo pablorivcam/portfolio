@@ -73,7 +73,7 @@ export class Particle extends CanvasObject {
     update(canvas) {
 
         this.iteration++;
-        if (this.iteration > this.randomMovement && this.randomMovement + this.sizeDistortion < 20) {
+        if (this.iteration > this.randomMovement && this.randomMovement + this.sizeDistortion < 20 + this.sizeDistortion) {
             this.iteration = 0;
             this.changeSpeed();
         }

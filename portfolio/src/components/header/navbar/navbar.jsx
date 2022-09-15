@@ -12,7 +12,7 @@ export const Navbar = (props) => {
         var result = [];
         LOCALES.forEach((value, key) => {
             result.push(
-                <div value={key} key={value.code + '_languageBtn'} className="my_button" onClick={changeLanguage}>
+                <div value={key} key={value.code + '_languageBtn'} className="my_button2" onClick={changeLanguage}>
                     {key}
                 </div>)
         });
@@ -22,10 +22,13 @@ export const Navbar = (props) => {
 
 
     return <div id="navbar">
-        <div id="navbar_language_container">
-
-            {getLanguageButtons()}
-
+        <div id="navbar_container">
+            <div id="navbar_right_container">
+                <div className="my_button2"></div>
+            </div>
+            <div id="navbar_language_container">
+                {getLanguageButtons()}
+            </div>
         </div>
     </div>
 }

@@ -1,10 +1,24 @@
 #navbar {
     width: 100%;
     z-index: 1;
-    position: relative;
+    position: fixed;
 }
 
 #navbar_language_container {
     position: absolute;
     right: 0;
+    margin-right: 2vw;
+}
+
+#navbar .my_button2 {
+    color: white;
+}
+
+#navbar_container {
+    position: relative;
+    padding: 1vh 1vw;
+}
+
+#navbar_right_container {
+    position: absolute;
 }
