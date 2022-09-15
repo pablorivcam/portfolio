@@ -10,6 +10,9 @@ const HeaderCanvas = props => {
 
     var fpsInterval, now, then, elapsed;
 
+    var lastTemperature = 50;
+    var lastSpeed = 20;
+
     // Se inicializan las partículas
     const particles = [];
     for (let i = 0; i < 400; i++) {
@@ -19,6 +22,34 @@ const HeaderCanvas = props => {
         const positionY = Math.round((Math.random() * CANVAS_HEIGHT)) + 70;
 
         particles.push(new Particle(positionX, positionY, size, getParticleColor(), 8));
+    }
+
+    /**
+     * Función que comprueba si hay cambios en las variables del componente padre
+     */
+    function checkHeaderParams() {
+
+        const temperatureInput = document.getElementById("canvasTemperature");
+        const speedInput = document.getElementById("canvasSpeed");
+
+        if (temperatureInput !== undefined && parseInt(temperatureInput.value) !== lastTemperature) {
+            lastTemperature = parseInt(temperatureInput.value);
+
+            particles.forEach(p => {
+                p.setColor(lastTemperature);
+            });
+
+        }
+
+        if (speedInput !== undefined && parseInt(speedInput.value) !== lastSpeed) {
+            lastSpeed = parseInt(speedInput.value);
+
+            particles.forEach(p => {
+                p.setSpeedThreshold(lastSpeed);
+            });
+
+        }
+
     }
 
     /**
@@ -34,6 +65,7 @@ const HeaderCanvas = props => {
         ctx.fill();
 
         particles.forEach(p => { p.update(c); p.draw(ctx); });
+        checkHeaderParams();
 
     }
 
@@ -84,6 +116,7 @@ const HeaderCanvas = props => {
 
             p.changeInitialPosition(positionX, positionY);
         });
+
     }
 
     return <canvas id="header_canvas" width={CANVAS_WIDTH} height={CANVAS_HEIGHT} ref={canvasElement} {...props} />

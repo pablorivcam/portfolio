@@ -8,6 +8,8 @@ export class Particle extends CanvasObject {
     aX = 1;
     aY = 2;
     color = '#99000099'
+
+    minSpeed = 1;
     maxSpeed = 20;
 
     canvas_width = 20;
@@ -62,7 +64,7 @@ export class Particle extends CanvasObject {
 
         if (this.positionX > canvas.width || this.positionX < -this.width ||
             this.positionY > canvas.height || this.positionY < -this.height ||
-            this.aX === 0 || this.ay === 0) {
+            Math.abs(this.aX) < this.minSpeed || Math.abs(this.ay) < this.minSpeed) {
             this.positionX = this.initialX;
             this.positionY = this.initialY;
             this.changeSpeed();
@@ -79,12 +81,50 @@ export class Particle extends CanvasObject {
         ctx.fillRect(this.positionX, this.positionY, this.width, this.height);
     }
 
+    /**
+     * Cambia el color de la partícula de acuerdo a una temperatura recibida por parámetro
+     * @param {number} temperature 
+     */
+    setColor(temperature) {
+
+        var temperatureString = '00';
+        var greenValueString = this.color.substring(3, 5);
+
+        if (temperature > 50) {
+            if (temperature !== undefined) {
+                temperatureString = (Math.round(temperature * 2) - 50).toString(16);
+                if (temperatureString.length < 2) {
+                    temperatureString += '0';
+                }
+            }
+        } else {
+            var greenValue = parseInt(this.color.substring(3, 5), 16);
+            greenValue = (70 - temperature) * 2;
+            greenValueString = greenValue.toString(16);
+        }
+
+        this.color = '#' + temperatureString + greenValueString + this.color.substring(5, 9);
+
+    }
+
+    /**
+     * Cambia la velocidad máxima y mínima de una partícula
+     * @param {number} maxSpeed velocidad máxima que puede alcanzar la partícula 
+     */
+    setSpeedThreshold(maxSpeed) {
+        this.maxSpeed = maxSpeed;
+        this.minSpeed = Math.round(maxSpeed / 20);
+    }
+
 }
 
+/**
+ * Genera el color de una partícula de manera aleatoria.
+ * @returns el color generado
+ */
 export function getParticleColor() {
     const colorValue = Math.round((Math.random() * 180)) + 70;
     const colorTransparency = Math.round((Math.random() * 100)) + 40;
-
-    return '#00' + colorValue.toString(16) / 4 + colorValue.toString(16) + colorTransparency.toString(16);
+    return '#0020' + colorValue.toString(16) + colorTransparency.toString(16);
 
 }

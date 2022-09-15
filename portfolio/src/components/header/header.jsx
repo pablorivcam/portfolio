@@ -7,6 +7,7 @@ import HeaderCanvas from "./canvas/headerCanvas";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
+// Variables necesarias para el reproductor
 var ready = false;
 var isMusicPlaying = false;
 var player = null;
@@ -95,6 +96,8 @@ function startMusic() {
 
 function changeDelay(value) {
     feedbackDelay.wet.value = value / 100;
+    const speedInput = document.getElementById("canvasSpeed");
+    speedInput.value = 5 + Math.round(value / 15);
 }
 
 function changeLowpass(value) {
@@ -103,6 +106,8 @@ function changeLowpass(value) {
 
 function changePitchShift(value) {
     pitchShiftFilter.pitch = (value - 50) / 6
+    const temperatureInput = document.getElementById("canvasTemperature");
+    temperatureInput.value = value;
 }
 
 function changeVibrato(value) {
@@ -115,9 +120,17 @@ function changeReverb(value) {
 }
 
 export function Header() {
+
     return <div id="header">
         <div id="header_container">
+
+            <div id="canvasProperties">
+                <input id="canvasTemperature" type="hidden" value="50" />
+                <input id="canvasSpeed" type="hidden" value="20" />
+            </div>
+
             <input id="header_sound_button" type="button" value="start" onClick={startMusic} />
+
             <HeaderCanvas />
             <audio src={testAudio}></audio>
             <div id="center_container">
