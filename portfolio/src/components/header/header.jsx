@@ -95,13 +95,18 @@ function startMusic() {
 //}
 
 function changeDelay(value) {
+
     feedbackDelay.wet.value = value / 100;
-    const speedInput = document.getElementById("canvasSpeed");
-    speedInput.value = 5 + Math.round(value / 15);
+    const sizeDistortionInput = document.getElementById("canvasSizeDistortion");
+    sizeDistortionInput.value = Math.round(value / 10);
+
 }
 
 function changeLowpass(value) {
     lowpassFilter.frequency.value = value * 200;
+    const speedInput = document.getElementById("canvasSpeed");
+    speedInput.value = 5 + Math.round(value / 15);
+
 }
 
 function changePitchShift(value) {
@@ -113,10 +118,15 @@ function changePitchShift(value) {
 function changeVibrato(value) {
     vibratoEffect.depth.value = value / 100;
     vibratoEffect.frequency.value = value / 10;
+    const vibrationInput = document.getElementById("canvasVibration");
+    vibrationInput.value = 20 - Math.round(value / 7);
+
 }
 
 function changeReverb(value) {
     reverbEffect.decay = value / 10;
+    const distiortionInput = document.getElementById("canvasDistortion");
+    distiortionInput.value = Math.round(value / 10);
 }
 
 export function Header() {
@@ -126,7 +136,10 @@ export function Header() {
 
             <div id="canvasProperties">
                 <input id="canvasTemperature" type="hidden" value="50" />
-                <input id="canvasSpeed" type="hidden" value="20" />
+                <input id="canvasSpeed" type="hidden" value="5" />
+                <input id="canvasVibration" type="hidden" value="20" />
+                <input id="canvasDistortion" type="hidden" value="0" />
+                <input id="canvasSizeDistortion" type="hidden" value="0" />
             </div>
 
             <input id="header_sound_button" type="button" value="start" onClick={startMusic} />

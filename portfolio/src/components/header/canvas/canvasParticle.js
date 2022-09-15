@@ -15,6 +15,13 @@ export class Particle extends CanvasObject {
     canvas_width = 20;
     canvas_height = 20;
 
+    randomMovement = 20;
+    iteration = 0;
+
+    // Parámetros para cambiar la forma de la partícula
+    distortion = 0;
+    sizeDistortion = 0;
+
     /**
      * Crea una nueva partícula
      * @param {*} initialX posición X inicial de la partícula
@@ -52,6 +59,11 @@ export class Particle extends CanvasObject {
     changeSpeed() {
         this.aX = Math.round((Math.random() * this.maxSpeed)) - this.maxSpeed / 2;
         this.aY = Math.round((Math.random() * this.maxSpeed)) - this.maxSpeed / 2;
+
+        if (Math.abs(this.aX) < this.minSpeed || Math.abs(this.ay) < this.minSpeed) {
+            this.changeSpeed();
+        }
+
     }
 
     /**
@@ -59,6 +71,13 @@ export class Particle extends CanvasObject {
      * @param {*} canvas canvas en el que se quiere actualizar la partícula
      */
     update(canvas) {
+
+        this.iteration++;
+        if (this.iteration > this.randomMovement && this.randomMovement + this.sizeDistortion < 20) {
+            this.iteration = 0;
+            this.changeSpeed();
+        }
+
         this.positionX += this.aX;
         this.positionY += this.aY;
 
@@ -70,6 +89,11 @@ export class Particle extends CanvasObject {
             this.changeSpeed();
         }
 
+        //var redValueString = (parseInt(this.color.substring(1, 3), 16) + Math.round(this.aX)) % 160;
+        //var greenValueString = (parseInt(this.color.substring(3, 5), 16) + Math.round(this.aX)) % 160;
+        //var blueValueString = ((parseInt(this.color.substring(5, 7), 16) - Math.round(this.aX))).toString(16);
+        //this.color = this.color.substring(0, 5) + blueValueString + this.color.substring(7, 9);
+
     }
 
     /**
@@ -77,8 +101,20 @@ export class Particle extends CanvasObject {
      * @param {*} ctx contexto del canvas para dibujar la partícula
      */
     draw(ctx) {
+
         ctx.fillStyle = this.color;
-        ctx.fillRect(this.positionX, this.positionY, this.width, this.height);
+        //this.color = '#' + (this.positionX * this.positionY % 255 * 4).toString(16);
+        //ctx.strokeStyle = this.color;
+        //ctx.fillRect(this.positionX, this.positionY, this.width, this.height);
+
+        ctx.beginPath();
+        ctx.moveTo(this.positionX, this.positionY);
+        ctx.lineTo(this.positionX + this.width + this.sizeDistortion + this.distortion, this.positionY);
+        ctx.lineTo(this.positionX + this.width + this.sizeDistortion, this.positionY + this.height + this.sizeDistortion);
+        ctx.lineTo(this.positionX - this.distortion, this.positionY + this.height + this.sizeDistortion);
+        ctx.closePath();
+        ctx.fill();
+
     }
 
     /**

@@ -11,7 +11,10 @@ const HeaderCanvas = props => {
     var fpsInterval, now, then, elapsed;
 
     var lastTemperature = 50;
-    var lastSpeed = 20;
+    var lastSpeed = 5;
+    var lastVibration = 20;
+    var lastDistortion = 0;
+    var lastSizeDistortion = 0;
 
     // Se inicializan las partículas
     const particles = [];
@@ -21,7 +24,7 @@ const HeaderCanvas = props => {
         const positionX = Math.round((Math.random() * CANVAS_WIDTH)) + 70;
         const positionY = Math.round((Math.random() * CANVAS_HEIGHT)) + 70;
 
-        particles.push(new Particle(positionX, positionY, size, getParticleColor(), 8));
+        particles.push(new Particle(positionX, positionY, size, getParticleColor(), lastSpeed));
     }
 
     /**
@@ -31,6 +34,9 @@ const HeaderCanvas = props => {
 
         const temperatureInput = document.getElementById("canvasTemperature");
         const speedInput = document.getElementById("canvasSpeed");
+        const vibrationInput = document.getElementById("canvasVibration");
+        const distiortionInput = document.getElementById("canvasDistortion");
+        const sizeDistortionInput = document.getElementById("canvasSizeDistortion");
 
         if (temperatureInput !== undefined && parseInt(temperatureInput.value) !== lastTemperature) {
             lastTemperature = parseInt(temperatureInput.value);
@@ -48,6 +54,30 @@ const HeaderCanvas = props => {
                 p.setSpeedThreshold(lastSpeed);
             });
 
+        }
+
+        if (vibrationInput !== undefined && parseInt(vibrationInput.value) !== lastVibration) {
+            lastVibration = parseInt(vibrationInput.value);
+
+            particles.forEach(p => {
+                p.randomMovement = lastVibration;
+            });
+        }
+
+        if (distiortionInput !== undefined && parseInt(distiortionInput.value) !== lastDistortion) {
+            lastDistortion = parseInt(distiortionInput.value);
+
+            particles.forEach(p => {
+                p.distortion = lastDistortion;
+            });
+        }
+
+        if (sizeDistortionInput !== undefined && parseInt(sizeDistortionInput.value) !== lastSizeDistortion) {
+            lastSizeDistortion = parseInt(sizeDistortionInput.value);
+
+            particles.forEach(p => {
+                p.sizeDistortion = lastSizeDistortion;
+            });
         }
 
     }
