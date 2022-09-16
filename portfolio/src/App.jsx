@@ -31,7 +31,7 @@ export function App() {
                 <Navbar currentLocale={currentLocale} handleChange={changeLanguage} />
                 <Header />
             </div>
-            <div style={{ marginTop: '100vh', position: 'absolute' }}>
+            <div style={{ marginTop: '100vh', position: 'absolute', width: '-webkit-fill-available' }}>
                 <About />
                 <Footer />
             </div>

@@ -8,6 +8,6 @@ export function Footer() {
         <div id="footer_return_button" className="return-button">
             <FontAwesomeIcon className="fa-icon" icon={faAngleDoubleUp} />
         </div>
-        Pablo Rivas Camino - 2022
+        <p>Pablo Rivas Camino - 2022</p>
     </footer>
 }

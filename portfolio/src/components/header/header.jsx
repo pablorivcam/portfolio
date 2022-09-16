@@ -150,7 +150,7 @@ export function Header() {
                 <input id="canvasSizeDistortion" type="hidden" value="0" />
             </div>
 
-            <div id="header_sound_button" class="my_button2" type="button" value="start" onClick={startMusic}>
+            <div id="header_sound_button" className="my_button2" type="button" value="start" onClick={startMusic}>
                 <FontAwesomeIcon id="header_sound_button_off" className="fa-icon" icon={faVolumeXmark} />
                 <FontAwesomeIcon id="header_sound_button_on" style={{ 'display': 'none' }} className="fa-icon" icon={faVolumeHigh} />
             </div>

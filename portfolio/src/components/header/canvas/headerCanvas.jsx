@@ -16,6 +16,8 @@ const HeaderCanvas = props => {
     var lastDistortion = 0;
     var lastSizeDistortion = 0;
 
+    var mouseIn = true;
+
     // Se inicializan las partículas
     const particles = [];
     for (let i = 0; i < 400; i++) {
@@ -141,10 +143,16 @@ const HeaderCanvas = props => {
                 positionY = Math.round((Math.random() * CANVAS_HEIGHT)) + 70;
             } else {
                 positionX = e.clientX * (CANVAS_WIDTH / window.innerWidth);
-                positionY = e.clientY * (CANVAS_HEIGHT / window.innerHeight);
+                positionY = (e.clientY + document.documentElement.scrollTop) * (CANVAS_HEIGHT / window.innerHeight);
             }
 
-            p.changeInitialPosition(positionX, positionY);
+            if (mouseIn && positionY > CANVAS_HEIGHT) {
+                mouseIn = false;
+            } else {
+                mouseIn = true;
+                p.changeInitialPosition(positionX, positionY);
+            }
+
         });
 
     }
