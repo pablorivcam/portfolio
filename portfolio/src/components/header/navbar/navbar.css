@@ -20,6 +20,21 @@
     padding: 1vh 1vw;
 }
 
+#navbar_middle_container {
+    position: absolute;
+}
+
+
 #navbar_right_container {
     position: absolute;
+    color: white;
+}
+
+#navbar_right_container svg path {
+    fill: white;
+}
+
+#navbar_right_container svg {
+    width: 5vw;
+    height: 5vh;
 }

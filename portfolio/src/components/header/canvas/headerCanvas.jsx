@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Particle, getParticleColor } from "./canvasParticle";
 
 const HeaderCanvas = props => {
@@ -6,7 +6,7 @@ const HeaderCanvas = props => {
     const CANVAS_WIDTH = 1200;
     const CANVAS_HEIGHT = 600;
 
-    var canvasElement = useRef(null);
+    var canvasElement = useState(null);
 
     var fpsInterval, now, then, elapsed;
 
@@ -157,7 +157,7 @@ const HeaderCanvas = props => {
 
     }
 
-    return <canvas id="header_canvas" width={CANVAS_WIDTH} height={CANVAS_HEIGHT} ref={canvasElement} {...props} />
+    return <canvas id="header_canvas" width={CANVAS_WIDTH} height={CANVAS_HEIGHT} ref={canvasElement.current} {...props} />
 }
 
 export default HeaderCanvas

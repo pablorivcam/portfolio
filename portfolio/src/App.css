@@ -11,10 +11,17 @@ body {
 
 section {
   padding: 1vh 5vw;
+  min-height: 100vh;
 }
 
 .text_primary {
   color: #00CC99;
+}
+
+.text_primary_gradient {
+  background: -webkit-linear-gradient(30deg, #0030A5, #00CC99);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 @-webkit-keyframes rotate

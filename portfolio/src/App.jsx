@@ -7,6 +7,9 @@ import { messages } from "./i18n/messages";
 import { Navbar } from "./components/header/navbar/navbar";
 import { Footer } from "./components/footer/footer";
 import { About } from "./components/about/about";
+import { Experience } from "./components/experience/experience";
+import { Skills } from "./components/skills/skills";
+import { Contact } from "./components/contact/contact";
 
 export function App() {
 
@@ -33,6 +36,9 @@ export function App() {
             </div>
             <div style={{ marginTop: '100vh', position: 'absolute', width: '-webkit-fill-available' }}>
                 <About />
+                <Experience />
+                <Skills intl={messages[currentLocale]} />
+                <Contact />
                 <Footer />
             </div>
         </IntlProvider>
