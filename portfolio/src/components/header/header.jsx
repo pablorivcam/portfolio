@@ -7,6 +7,7 @@ import HeaderCanvas from "./canvas/headerCanvas";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRight, faVolumeXmark, faVolumeHigh } from "@fortawesome/free-solid-svg-icons";
 import { FormattedMessage } from "react-intl";
+import { Link } from "react-scroll";
 
 // Variables necesarias para el reproductor
 var ready = false;
@@ -177,12 +178,14 @@ export function Header() {
                 <div id="header_title">
                     <div><FormattedMessage id="welcomeMsg01" /> <span className="text_primary">Pablo Rivas</span></div>
                     <div><FormattedMessage id="welcomeMsg02" /></div>
-                    <div className="my_button" style={{ "marginTop": "0.5em" }}>
-                        <span><FormattedMessage id="enter" /></span>
-                        <div className="fa-icon" style={{ "marginLeft": "0.25em" }}>
-                            <FontAwesomeIcon className="fa-icon" icon={faArrowRight}></FontAwesomeIcon>
+                    <Link to="about" smooth={true} duration={1000}>
+                        <div className="my_button" style={{ "marginTop": "0.5em" }}>
+                            <span><FormattedMessage id="enter" /></span>
+                            <div className="fa-icon" style={{ "marginLeft": "0.25em" }}>
+                                <FontAwesomeIcon className="fa-icon" icon={faArrowRight}></FontAwesomeIcon>
+                            </div>
                         </div>
-                    </div>
+                    </Link>
                 </div>
             </div>
         </div >

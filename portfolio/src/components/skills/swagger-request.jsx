@@ -7,9 +7,14 @@ import { faChevronUp, faChevronDown } from "@fortawesome/free-solid-svg-icons";
 export function SwaggerRequest({ methodType, methodPath, methodDescription, methodInfo, methodResponse }) {
 
     const [isOpen, setIsOpen] = useState(false);
+    const [isExecuteBtnVisible, setIsExecuteBtnVisible] = useState(false);
 
     function open() {
         setIsOpen(!isOpen);
+    }
+
+    function showExecuteBtn() {
+        setIsExecuteBtnVisible(!isExecuteBtnVisible);
     }
 
     return <div>
@@ -28,13 +33,17 @@ export function SwaggerRequest({ methodType, methodPath, methodDescription, meth
                 <div className="swagger-elements-parameter-header">
                     <div className="swagger-elements-parameter-header-title">
                         <h4>Parameters</h4>
-                        <button className="try-out-btn">Try it out</button>
+                        <button className={isExecuteBtnVisible ? "try-out-btn hidden" : "try-out-btn"} onClick={showExecuteBtn}>Try it out</button>
+                        <button className={!isExecuteBtnVisible ? "hidden" : "try-out-btn cancel_btn"} onClick={showExecuteBtn}>Cancel</button>
                     </div>
                 </div>
                 <div className="swagger_element_container">
                     No parameters
                 </div>
-                <div className="swagger_element_container"></div>
+                <div className="swagger_element_container" style={{ display: 'flex' }}>
+                    <button className={isExecuteBtnVisible ? 'execute_btn visible' : 'execute_btn hidden'}>Execute</button>
+                    <button className={isExecuteBtnVisible ? 'execute_btn clear_btn' : 'hidden'}>Clear</button>
+                </div>
                 <div className="swagger-elements-parameter-header">
                     <div className="swagger-elements-parameter-header-title">
                         <h4>Responses</h4>
