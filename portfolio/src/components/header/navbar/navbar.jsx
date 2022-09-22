@@ -6,9 +6,8 @@ import { Link } from "react-scroll";
 
 export const Navbar = (props) => {
 
-    const [isScrolled, setIsScrolled] = useState(false);
     const [scroll, setScroll] = useState(0);
-    const [navbarHeight, setnavbarHeight] = useState(0);
+    const [navbarHeight, setNavbarHeight] = useState(0);
 
     function changeLanguage(e) {
         props.handleChange(e.target.textContent);
@@ -27,9 +26,9 @@ export const Navbar = (props) => {
     }
 
     window.addEventListener('scroll', e => {
+        console.log(scroll);
         setScroll(window.pageYOffset);
-        setIsScrolled(window.pageYOffset > window.innerHeight - (document.getElementById("navbar").offsetHeight));
-        setnavbarHeight(document.getElementById("navbar").offsetHeight);
+        setNavbarHeight(document.getElementById("navbar").offsetHeight);
     });
 
     function isHighlighted(id) {
@@ -63,7 +62,7 @@ export const Navbar = (props) => {
                         <FormattedMessage id="experience_title" />
                     </div>
                 </Link>
-                <div style={{ padding: '1vh 10vw' }}></div>
+                <div></div>
                 <Link to="skills" smooth={true} duration={1000}>
                     <div className={isHighlighted("skills") ? "my_button2 highlight_element" : "my_button2"}>
                         <FormattedMessage id="skills_title" />

@@ -4,12 +4,14 @@
     /*background-image: url("https://scontent.fvgo3-1.fna.fbcdn.net/v/t39.30808-6/267513200_4609125692547812_5914964504741754312_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=730e14&_nc_ohc=Hi7Vp88LE10AX-ma3tb&_nc_ht=scontent.fvgo3-1.fna&oh=00_AT9VABJugb5DMOEI0Y0WUYY8-7NEbD8HtJ2eUTQbL7j6bw&oe=632B71DC");*/
     background-repeat: no-repeat;
     background-attachment: fixed;
+    color: white;
+    background-color: black;
+
 }
 
 #about_container {
     display: flex;
     width: 100%;
-    color: black;
 }
 
 #about_content {
@@ -24,6 +26,7 @@
 #about_section_highlight_description {
     font-size: 1.8vw;
     width: 55vw;
+    color: var(--main-color);
 }
 
 #about_section_description,

@@ -1,6 +1,5 @@
 import React from "react";
 import './about.css';
-import backgroundImg from '../../resources/background.png';
 
 import { FormattedMessage } from "react-intl";
 
@@ -34,7 +33,7 @@ export function About() {
                     <p id="greeting_msg"><FormattedMessage id="greeting_msg" /> {getDayOfWeek()}!</p>
                 </div>
                 <div id="about_img">
-                    <img src="https://scontent.fvgo3-1.fna.fbcdn.net/v/t39.30808-6/267513200_4609125692547812_5914964504741754312_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=730e14&_nc_ohc=Hi7Vp88LE10AX-ma3tb&_nc_ht=scontent.fvgo3-1.fna&oh=00_AT9VABJugb5DMOEI0Y0WUYY8-7NEbD8HtJ2eUTQbL7j6bw&oe=632B71DC" />
+                    <img src="https://scontent.fvgo3-1.fna.fbcdn.net/v/t39.30808-6/267513200_4609125692547812_5914964504741754312_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=730e14&_nc_ohc=Hi7Vp88LE10AX-ma3tb&_nc_ht=scontent.fvgo3-1.fna&oh=00_AT9VABJugb5DMOEI0Y0WUYY8-7NEbD8HtJ2eUTQbL7j6bw&oe=632B71DC" alt="me" />
                 </div>
             </div>
         </div>

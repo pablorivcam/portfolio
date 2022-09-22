@@ -1,3 +1,9 @@
+:root {
+  --main-color: #b3b33f;
+  --secondary-color: #19a1f0;
+  --white: #ffffff;
+}
+
 body {
   margin: 0;
   font-size: 1vw;
@@ -5,8 +11,14 @@ body {
 
 }
 
+section {
+  background-color: black;
+  color: white;
+}
+
 .section_title {
   font-size: 6vmin;
+  color: var(--secondary-color);
 }
 
 section {
@@ -15,11 +27,11 @@ section {
 }
 
 .text_primary {
-  color: #00CC99;
+  color: var(--main-color);
 }
 
 .text_primary_gradient {
-  background: -webkit-linear-gradient(30deg, #0030A5, #00CC99);
+  background: -webkit-linear-gradient(30deg, var(--secondary-color), black);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -105,7 +117,7 @@ section {
 }
 
 .my_button {
-  border: 0.1em solid #fff;
+  border: 0.1em solid var(--white);
   box-sizing: inherit;
   -webkit-transition: .5s;
   transition: all .5s;
@@ -113,8 +125,8 @@ section {
 }
 
 .my_button:hover {
-  background: #1b9aaa;
-  border-color: #1b9aaa;
+  background: var(--secondary-color);
+  border-color: var(--secondary-color);
 }
 
 .my_button .fa-icon {

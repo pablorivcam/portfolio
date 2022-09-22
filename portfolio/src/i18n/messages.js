@@ -27,6 +27,9 @@ export const messages = {
         skills_frameworks_info: 'Aquí están mis habilidades con los principales frameworks que manejo.',
         skills_tools_description: 'Devuelve las herramientas',
         skills_tools_info: 'Aquí están mis habilidades con los principales herramientas que manejo.',
+        skills_usc: "Universidad de Santiago de Compostela",
+        skills_informatics_degree: "Grado en Ingeniería Informática",
+        skills_udc: "Universidad de A Coruña",
 
     },
     [GALICIAN]: {
@@ -55,6 +58,9 @@ export const messages = {
         skills_frameworks_info: 'Aquí están as miñas habilidades cos principais frameworks que manexo.',
         skills_tools_description: 'Devolve as ferramentas',
         skills_tools_info: 'Aquí están as miñas habilidades cas principais ferramentas que manexo.',
+        skills_usc: "Universidade de Santiago de Compostela",
+        skills_udc: "Universidade de A Coruña",
+        skills_informatics_degree: "Grao en Enxañeiría Informática",
 
     },
     [ENGLISH]: {
@@ -76,13 +82,16 @@ export const messages = {
         experience_title: "Experience",
         superior_degree: "superior degree",
         skills_title: "Skills",
-        contact_title: "contact",
+        contact_title: "Contact",
         skills_languages_description: 'Get the programming languages',
         skills_languages_info: 'Here are my habilities with the main programming languages that I use.',
         skills_frameworks_description: 'Get the frameworks',
         skills_frameworks_info: 'Here are my habilities with the main frameworks that I use.',
         skills_tools_description: 'Get the tools',
         skills_tools_info: 'Here are my habilities with the main tools that I use.',
+        skills_usc: "Santiago de Compostela University",
+        skills_udc: "A Coruña University",
+        skills_informatics_degree: "Informatics Degree",
 
     }
 };

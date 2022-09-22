@@ -3,8 +3,6 @@
     z-index: 1;
     position: absolute;
     transition: all 1s;
-
-    /*Cambiar posicón a fixed cuando se bjaa X*/
 }
 
 #navbar_language_container {
@@ -27,6 +25,7 @@
 }
 
 #navbar_middle_container {
+    width: 80vw;
     color: white;
     flex: 1;
     display: flex;
@@ -61,5 +60,5 @@
 }
 
 .highlight_element {
-    color: #00CC99 !important;
+    color: var(--main-color) !important;
 }

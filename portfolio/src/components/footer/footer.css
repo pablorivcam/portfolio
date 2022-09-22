@@ -7,11 +7,13 @@ footer {
     text-align: center;
     color: #fff;
     width: 100%;
-    background-color: #2d3339;
+    background-color: #121217;
 }
 
 .return-button:hover {
-    background-color: #44acb9;
+    background-color: var(--secondary-color);
+    border: 0.25vmin solid transparent;
+
 }
 
 .return-button {
@@ -22,12 +24,13 @@ footer {
     left: 0;
     padding: 0 !important;
     font-size: 3vh;
-    width: 5vh;
+    width: 4.5vh;
     height: 5vh;
-    background-color: #1b9aaa;
+    background-color: transparent;
     -webkit-transition: .5s;
     transition: all .5s;
     cursor: pointer;
+    border: 0.25vmin solid var(--white);
 }
 
 .return-button svg {
