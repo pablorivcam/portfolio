@@ -1,5 +1,112 @@
 #experience {
     color: white;
+    background-attachment: fixed !important;
+    background-position: center !important;
     background-repeat: no-repeat !important;
-    background-size: cover !important
+    background-size: cover !important;
+    min-height: 140vh;
+}
+
+.timeline {
+    height: 100%;
+    padding: 0 0 30vh;
+}
+
+.timeline_header_left {
+    position: relative;
+    left: 0;
+    border-top: 0.3vmin solid #fff;
+    border-right: 0.3vmin solid #fff;
+    border-radius: 0 50vw 0 0;
+    height: 9vh;
+
+}
+
+.timeline_header_right {
+    position: relative;
+    right: 0;
+    border-top: 0.3vmin solid #fff;
+    border-left: 0.3vmin solid #fff;
+    border-radius: 50vw 0 0 0;
+    height: 9vh;
+}
+
+/* Left side */
+
+.time-left {
+    border-right: 0.3vmin solid #fff;
+    height: 20vh;
+    color: #fff;
+    text-align: right;
+    float: left;
+    width: 50%;
+}
+
+.time-left .date {
+    width: 100%;
+    padding-right: 1vw;
+}
+
+.time-left .date-details {
+    width: 100%;
+    padding-right: 1vw;
+}
+
+.inner-left {
+    width: 7vw;
+    height: 1vh;
+    right: 0;
+    bottom: 0;
+    padding: 0;
+    margin: 0;
+    border-top: 0.3vmin solid #fff;
+    border-color: #fff;
+    padding: 0 0 0 1vw;
+    display: inline-block;
+}
+
+.time-left .date-description {
+    padding-top: 7vh;
+    padding-left: 15vw;
+    margin: 0 1vw;
+}
+
+/* Right side */
+
+.time-right {
+    border-left: 0.3vmin solid #fff;
+    height: 20vh;
+    color: #fff;
+    text-align: left;
+    float: right;
+    width: 50%;
+}
+
+.time-right .date {
+    width: 100%;
+    padding-left: 1vw;
+}
+
+.time-right .date-details {
+    width: 100%;
+    padding-left: 1vw;
+}
+
+.inner-right {
+    width: 7vw;
+    height: 1vh;
+    right: 0;
+    bottom: 0;
+    padding: 0;
+    margin: 0;
+    border-top: 0.3vmin solid #fff;
+    border-color: #fff;
+    padding: 0 1vw 0 0;
+    display: inline-block;
+}
+
+.time-right .date-description {
+    padding-top: 7vh;
+    padding-right: 15vw;
+    margin: 0 1vw;
 }
